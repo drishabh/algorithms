@@ -32,8 +32,8 @@ def sieve(a, b):
 def gettingRandomNumber():
     ##Getting a large number to seed the primes number generator
     
-    LENGTH = 10**5
-    START = 10**3
+    LENGTH = 10**5 ##Starting number for the sieve
+    START = 10**3  ##Ending point for the sieve
     END = 10**4
     primes = sieve(START, END)
     return LENGTH + primes[randint(1, len(primes))-1]
@@ -41,9 +41,7 @@ def gettingRandomNumber():
 def fermat(number):
     ##Checking to see if the number if prime acc to fermat theorem
     
-    REPEAT = 5
-    for i in range(REPEAT):
-        base = randint(2, number-2)
+    for i in range(number):
         if not (base ** (number - 1))%number == 1:
             return False
     return True
@@ -88,7 +86,7 @@ def secondaryTest(number):
     ##Testing the miller-rabin with many random bases to make sure number is
     ##prime
     
-    TEST_TIMES = 5
+    TEST_TIMES = 100 ##Number of times miller-rabin is checked on a given number 
     for i in range(TEST_TIMES):
         if millerRabin(number) == False:
             return False
@@ -98,7 +96,7 @@ def gettingE(n, phi):
     ##Getting the encryption key (from a list of all the possible keys for more
     ##randomisation)
     
-    MORE_RANDOMISATION = 100
+    MORE_RANDOMISATION = 10    ##Selecting key form a possibe value of 100 locks
     lyst = []
     for i in range(2, phi):
         if (n%i):
@@ -113,7 +111,7 @@ def gettingE(n, phi):
 def gettingD(E, phi):
     ##Getting the decryption key (using randomisation)
     
-    POSSIBLE_D = 2
+    POSSIBLE_D = 10      ##Selecting key form a possibe value of 100 keys
     lyst = []
     for i in range(1, sys.maxsize):
         possibleD = (E*i)%phi
@@ -122,7 +120,7 @@ def gettingD(E, phi):
             if len(lyst) > POSSIBLE_D:
                 break
     
-    print("Decryption keys possible:", (lyst))
+    print("Decryption keys possible:", (lyst))  
     return lyst[randint(1, len(lyst))-1]
 
 def encrypt(mess, lock, secondKey):
@@ -149,7 +147,7 @@ def decrypt(decr, key, secondKey):
 def main():
     
     message = input("Enter the message: ")
-    SECOND_KEY = 14
+    SECOND_KEY = 14         ##Second key rquired for encryption and decryption
     randNumber = gettingRandomNumber()
     if not randNumber%2:
         randNumber += 1
