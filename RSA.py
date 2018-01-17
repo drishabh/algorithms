@@ -32,9 +32,9 @@ def sieve(a, b):
 def gettingRandomNumber():
     ##Getting a large number to seed the primes number generator
     
-    LENGTH = 10**5 ##Starting number for the sieve
-    START = 10**3  ##Ending point for the sieve
-    END = 10**4
+    LENGTH = 10**5 ## Adding a large number to a given prime
+    START = 10**3  ##Starting number for the sieve
+    END = 10**4     ##Endting number for the sieve
     primes = sieve(START, END)
     return LENGTH + primes[randint(1, len(primes))-1]
 
