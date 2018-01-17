@@ -30,7 +30,7 @@ def sieve(a, b):
     return odd
 
 def gettingRandomNumber():
-    ##Getting a large nmber to seed the primes number generator
+    ##Getting a large number to seed the primes number generator
     
     LENGTH = 10**5
     START = 10**3
@@ -112,7 +112,6 @@ def gettingE(n, phi):
 
 def gettingD(E, phi):
     ##Getting the decryption key (using randomisation)
-    ##randomisation)
     
     POSSIBLE_D = 2
     lyst = []
@@ -123,11 +122,12 @@ def gettingD(E, phi):
             if len(lyst) > POSSIBLE_D:
                 break
     
-    print("D possible:", (lyst))
+    print("Decryption keys possible:", (lyst))
     return lyst[randint(1, len(lyst))-1]
 
 def encrypt(mess, lock, secondKey):
     ##Ecrypting the message
+    
     data = l2int()
     newMess = []
     for i in mess:
