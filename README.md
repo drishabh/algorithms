@@ -5,7 +5,7 @@
 
 3. quickSort ... Recursive implementation of quick sort. More can be read at https://en.wikipedia.org/wiki/Quicksort.
 
-4. sieve ... Sieve of Eratosthenes. An algorithm to find all primes smaller than or equal to a given prime number. More can be read at
+4. sieve ... Sieve of Eratosthenes. An algorithm to find all primes smaller than or equal to a given number. More can be read at
              https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes.
              
 5. KMP ... Implementation of Knuth–Morris–Pratt (KMP) string matching algorithm. Worst case complexity: O(n). More can be read at
