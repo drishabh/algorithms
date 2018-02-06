@@ -1,7 +1,7 @@
 ##Author: Rishabh Dalal
-##Description: Program to find thee length of longest common substring
+##Description: Program to find the length of longest common substring
 
-def LCSubStr(stringA, stringB):
+def LCS(stringA, stringB):
     
     table = [[0 for k in range(len(stringB)+1)] for l in range(len(stringA)+1)]
     result = 0
